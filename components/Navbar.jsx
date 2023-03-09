@@ -6,12 +6,21 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 const Navbar = () => {
   const [nav, setNav] = useState(false)
-
+  const [shadow, setShadow] = useState(false);
+  const [navBg, setNavBg] = useState('#ecf0f3');
+  const [linkColor, setLinkColor] = useState('#1f2937');
   const handleNav = () => {
     setNav(!nav)
   }
   return (
-    <div className='fixed w-full h-20 shadow-xl z-[100]'>
+    <div
+      style={{ backgroundColor: `${navBg}` }}
+      className={
+        shadow
+          ? 'fixed w-full h-20 shadow-xl z-[100] ease-in-out duration-300'
+          : 'fixed w-full h-20 z-[100]'
+      }
+    >
       <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
         <Image src="/assets/logo.png" alt="/" width='125' height='50' />
         <div>
