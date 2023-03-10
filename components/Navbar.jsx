@@ -1,17 +1,44 @@
-import React, { use, useState } from 'react'
+import React, { useState } from 'react'
+import { useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
+
+
 const Navbar = () => {
   const [nav, setNav] = useState(false)
   const [shadow, setShadow] = useState(false);
   const [navBg, setNavBg] = useState('#ecf0f3');
-  const [linkColor, setLinkColor] = useState('#1f2937');
+  // const [linkColor, setLinkColor] = useState('#1f2937');
   const handleNav = () => {
     setNav(!nav)
-  }
+  };
+
+  useEffect (()=>{
+    const handleShadow = () => {
+      if (window.scrollY >= 90) {
+        setShadow(true)
+      }
+      else{
+        setShadow(false)
+      }
+    }
+    window.addEventListener('scroll',handleShadow)
+  },[]);
+ 
+  // useEffect(() => {
+  //   const handleShadow = () => {
+  //     if (window.scrollY >= 90) {
+  //       setShadow(true);
+  //     } else {
+  //       setShadow(false);
+  //     }
+  //   };
+  //   window.addEventListener('scroll', handleShadow);
+  // }, []);
+ 
   return (
     <div
       style={{ backgroundColor: `${navBg}` }}
@@ -22,13 +49,16 @@ const Navbar = () => {
       }
     >
       <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
+        <Link href="/">
         <Image src="/assets/logo.png" alt="/" width='125' height='50' />
+        </Link>
+        
         <div>
           <ul className='hidden md:flex'>
-            <Link href='/'>
+            <Link scroll={false} href='/#home'>
               <li className='ml-10 text-sm uppercase hover:border-b'>Home</li>
             </Link>
-            <Link href='/'>
+            <Link scroll={false} href='/#about'>
               <li className='ml-10 text-sm uppercase hover:border-b'>About</li>
             </Link>
             <Link href='/'>
