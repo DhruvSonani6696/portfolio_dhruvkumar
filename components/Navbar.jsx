@@ -62,11 +62,12 @@ const Navbar = () => {
               <li className='ml-10 text-sm uppercase hover:border-b'>About</li>
             </Link>
             <Link href='/'>
-              <li className='ml-10 text-sm uppercase hover:border-b'>Skills</li>
-            </Link>
-            <Link href='/'>
               <li className='ml-10 text-sm uppercase hover:border-b'>Projects</li>
             </Link>
+            <Link href='/'>
+              <li className='ml-10 text-sm uppercase hover:border-b'>Resume</li>
+            </Link>
+           
             <Link href='/'>
               <li className='ml-10 text-sm uppercase hover:border-b'>Contact</li>
             </Link>
@@ -91,19 +92,14 @@ const Navbar = () => {
           </div>
           <div className='py-4 flex flex-col'>
             <ul className='uppercase'>
-              <Link href='/'>
+              <Link href='/#home' scroll={false} onClick={handleNav}>
                 <li className='py-4 text-sm'>
                   Home
                 </li>
               </Link>
-              <Link href='/'>
+              <Link href='/#about' scroll={false} onClick={handleNav}>
                 <li className='py-4 text-sm'>
                   About
-                </li>
-              </Link>
-              <Link href='/'>
-                <li className='py-4 text-sm'>
-                  Skills
                 </li>
               </Link>
               <Link href='/'>
@@ -111,6 +107,12 @@ const Navbar = () => {
                   Projects
                 </li>
               </Link>
+              <Link href='/'>
+                <li className='py-4 text-sm'>
+                  Resume
+                </li>
+              </Link>
+              
               <Link href='/'>
                 <li className='py-4 text-sm'>
                   Contact
