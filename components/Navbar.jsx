@@ -4,12 +4,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import {BsFillMoonStarsFill} from 'react-icons/bs'
 
 
 
 const Navbar = () => {
   const [nav, setNav] = useState(false)
   const [shadow, setShadow] = useState(false);
+  // const [darkMode, setDarkMode] = useState(false);
   const [navBg, setNavBg] = useState('#ecf0f3');
   // const [linkColor, setLinkColor] = useState('#1f2937');
   const handleNav = () => {
@@ -55,6 +57,12 @@ const Navbar = () => {
         
         <div>
           <ul className='hidden md:flex'>
+         
+                {/* <BsFillMoonStarsFill
+                  onClick={() => setDarkMode(!darkMode)}
+                  className=" cursor-pointer text-2xl"
+                /> */}
+             
             <Link scroll={false} href='/#home'>
               <li className='ml-10 text-sm uppercase hover:border-b'>Home</li>
             </Link>
@@ -62,11 +70,12 @@ const Navbar = () => {
               <li className='ml-10 text-sm uppercase hover:border-b'>About</li>
             </Link>
             <Link href='/'>
-              <li className='ml-10 text-sm uppercase hover:border-b'>Projects</li>
-            </Link>
-            <Link href='/'>
               <li className='ml-10 text-sm uppercase hover:border-b'>Resume</li>
             </Link>
+            <Link href='/'>
+              <li className='ml-10 text-sm uppercase hover:border-b'>Projects</li>
+            </Link>
+            
            
             <Link href='/'>
               <li className='ml-10 text-sm uppercase hover:border-b'>Contact</li>
@@ -104,14 +113,15 @@ const Navbar = () => {
               </Link>
               <Link href='/'>
                 <li className='py-4 text-sm'>
-                  Projects
+                  Resume
                 </li>
               </Link>
               <Link href='/'>
                 <li className='py-4 text-sm'>
-                  Resume
+                  Projects
                 </li>
               </Link>
+              
               
               <Link href='/'>
                 <li className='py-4 text-sm'>
