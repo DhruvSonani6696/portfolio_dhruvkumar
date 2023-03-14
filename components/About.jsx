@@ -16,7 +16,7 @@ const About = () => {
           />
           <Card
             title="Business Startegy"
-            des="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply"            icon= {<FaMobile/>}
+            des="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply Lorem Ipsum is simply"            icon= {<FaMobile/>}
           />
           <Card
             title="Business Startegy"
